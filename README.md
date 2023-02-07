@@ -10,7 +10,9 @@ The vocabulary word list is fixed for one invocation of the server, so multiple 
 
 ## Student:	 
 Name: Jacob Burke
+
 School Email: jburke2@uoregon.edu
+
 Personal Email: jwburke256@gmail.com
 
 ## Authors
