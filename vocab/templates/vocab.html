@@ -118,15 +118,21 @@
 			// so ignoring the shift key we get only the upper case letters.
 
 			// checks to see if enter key was hit, ignored if wasn't
-			if (keycode !== 13) { return }
+			// if (keycode !== 13) { return }
 
 			$.getJSON( "/_check", { text: txt },
 			function(data) {
 				if (data.message) {
-				msg = data.message.finish || data.message.continue; // return string value for message
-					$("#message").html(msg);
-					console.log("msg: " + msg);
-					$("#attempt").val("");
+					if (data.message.continue) {
+						msg = data.message.continue; // return string value for message
+						$("#message").html(msg);
+						console.log("msg: " + msg);
+					} else {
+					msg = data.message.match || data.message.finish;
+						$("#message").html(msg);
+						console.log("msg: " + msg);
+						$("#attempt").val("");
+					}
 				}
 				if (data.result) {
 					rsval = data.result.match; // return string value is in result key
